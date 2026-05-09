@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>自然 3 下 CH4 互動學習</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">自然 3 下課本 CH4</p>
+      <h1>互動式自然學習頁</h1>
+    </div>
+    <nav aria-label="章節導覽">
+      <a href="#reader">課本</a>
+      <a href="#lab">實驗</a>
+      <a href="#quiz">測驗</a>
+      <a href="chapter4.pdf" download>下載 PDF</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">邊讀、邊想、邊操作</p>
+        <h2 id="hero-title">把第四章變成可以點、可以試、可以檢查理解的學習工具。</h2>
+        <p>左側保留原始課本，右側用任務卡、觀察紀錄、測驗與小實驗幫助學生主動整理重點。</p>
+      </div>
+      <div class="progress-panel" aria-label="學習進度">
+        <span>完成度</span>
+        <strong id="progressText">0%</strong>
+        <div class="meter"><div id="progressBar"></div></div>
+        <p id="progressHint">先完成一張任務卡吧。</p>
+      </div>
+    </section>
+
+    <section class="workspace" id="reader">
+      <aside class="study-panel" aria-label="學習任務">
+        <div class="panel-heading">
+          <p class="eyebrow">任務卡</p>
+          <h2>閱讀時可以做的事</h2>
+        </div>
+        <div class="task-list" id="taskList"></div>
+      </aside>
+
+      <section class="reader-panel" aria-label="PDF 課本">
+        <div class="reader-toolbar">
+          <div>
+            <p class="eyebrow">原文教材</p>
+            <h2>課本 CH4</h2>
+          </div>
+          <a class="button" href="chapter4.pdf" target="_blank" rel="noreferrer">另開 PDF</a>
+        </div>
+        <iframe title="自然 3 下課本 CH4 PDF" src="chapter4.pdf#view=FitH"></iframe>
+      </section>
+    </section>
+
+    <section class="lab" id="lab" aria-labelledby="lab-title">
+      <div>
+        <p class="eyebrow">互動實驗</p>
+        <h2 id="lab-title">觀察條件改變後，結果會怎麼變？</h2>
+        <p>拖曳滑桿改變「光照」、「水分」與「空氣流通」，記錄你觀察到的變化。這是一個學習用模擬，適合搭配課本活動討論。</p>
+      </div>
+      <div class="simulator">
+        <div class="plant-scene" aria-hidden="true">
+          <div class="sun" id="sun"></div>
+          <div class="cloud"></div>
+          <div class="plant" id="plant">
+            <span class="leaf left"></span>
+            <span class="leaf right"></span>
+            <span class="stem"></span>
+          </div>
+          <div class="soil"></div>
+        </div>
+        <div class="controls">
+          <label>光照 <input id="light" type="range" min="0" max="100" value="70"></label>
+          <label>水分 <input id="water" type="range" min="0" max="100" value="65"></label>
+          <label>空氣流通 <input id="air" type="range" min="0" max="100" value="55"></label>
+          <output id="simResult">條件不錯，適合觀察穩定成長。</output>
+        </div>
+      </div>
+    </section>
+
+    <section class="notes" aria-labelledby="notes-title">
+      <div>
+        <p class="eyebrow">觀察紀錄</p>
+        <h2 id="notes-title">把自己的發現留下來</h2>
+      </div>
+      <textarea id="notesBox" placeholder="例如：我發現水分太少時，模擬中的植物會變矮，葉子也比較沒精神。"></textarea>
+      <div class="note-actions">
+        <button id="saveNotes" type="button">儲存紀錄</button>
+        <button id="clearNotes" type="button">清空</button>
+        <span id="noteStatus" role="status"></span>
+      </div>
+    </section>
+
+    <section class="quiz" id="quiz" aria-labelledby="quiz-title">
+      <div class="panel-heading">
+        <p class="eyebrow">快速檢核</p>
+        <h2 id="quiz-title">我讀懂了嗎？</h2>
+      </div>
+      <div id="quizCards" class="quiz-grid"></div>
+      <div class="score-row">
+        <strong id="scoreText">答對 0 / 4 題</strong>
+        <button id="resetQuiz" type="button">重新作答</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>本頁以使用者提供的「自然 3 下課本 PDF_CH4」製作，適合課堂展示與自主複習。</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
